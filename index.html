@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Smiley AI – Control Center</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/style.css">
+  <!-- IMPORTANT: relative paths for GitHub -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1 style="color:white; text-align:center;">
-  Smiley UI Loaded 🚀
-</h1>
+<h1 class="title">Smiley UI Loaded 🚀</h1>
 
 <div class="app">
 
-  <!-- LEFT PANEL -->
+  <!-- LEFT -->
   <div class="panel left">
     <h4>Visual Input</h4>
 
@@ -38,20 +36,16 @@
 
   <!-- CENTER -->
   <div class="panel center">
-
-    <!-- 🌈 MOOD INDICATOR (JARVIS STYLE) -->
     <div id="mood" class="mood">😐</div>
-
     <canvas id="orbCanvas"></canvas>
 
     <div class="controls">
       <button id="start">▶ Start</button>
       <button id="stop" class="hidden">⏹ Stop</button>
-      <button id="mute">🔇 Mute</button>
     </div>
   </div>
 
-  <!-- RIGHT PANEL -->
+  <!-- RIGHT -->
   <div class="panel right">
     <h4>Transcript</h4>
     <div id="chat" class="card chat"></div>
@@ -59,7 +53,7 @@
 
 </div>
 
-<!-- JS -->
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+
