@@ -47,12 +47,15 @@ def listen():
     except:
         return ""
 
-# ================= AI =================
+# ================= AI (UNCHANGED CORE, MERGED LOGIC) =================
 def ai(prompt):
     res = client.chat.completions.create(
         model="llama-3.1-8b-instant",
         messages=[
-            {"role": "system", "content": "You are Smiley, a friendly assistant. Call the user Jafar boss."},
+            {
+                "role": "system",
+                "content": "You are Smiley, a friendly assistant. Call the user Jafar boss."
+            },
             {"role": "user", "content": prompt}
         ],
         temperature=0.7
@@ -202,7 +205,7 @@ def wish():
     speak("Good morning Jafar boss" if h < 12 else "Good evening Jafar boss")
     speak("Say hey smiley to wake me up")
 
-# ================= MAIN =================
+# ================= MAIN DESKTOP LOOP (UNCHANGED) =================
 if __name__ == "__main__":
     wish()
 
@@ -218,7 +221,6 @@ if __name__ == "__main__":
         if not q:
             continue
 
-        # AUTO REPLY PRIORITY
         if AUTO_REPLY and "reply now" in q:
             msg = read_selected_message()
             if msg:
@@ -283,14 +285,16 @@ if __name__ == "__main__":
 
         speak("Thinking boss")
         speak_long(ai(q))
+
+# ================= BACKEND ENTRY POINT (MERGED AS REQUESTED) =================
 def handle_command(command: str):
     if not command:
         return "I didn't hear anything boss.", "neutral"
 
     reply = ai(command)
 
-    mood = "thinking"
-    if "good" in reply.lower():
+    mood = "neutral"
+    if any(w in reply.lower() for w in ["good", "great", "nice"]):
         mood = "happy"
 
     return reply, mood
