@@ -49,7 +49,7 @@ async function sendToBackend(text) {
     });
     return await res.json();
   } catch {
-    return { reply: "Backend not connected boss 😅", mood: "neutral" };
+    return { reply: "Backend not connected,pls consult my jafar boss 😅", mood: "neutral" };
   }
 }
 
@@ -70,3 +70,4 @@ recognition.onresult = async (e) => {
 
   speechSynthesis.speak(new SpeechSynthesisUtterance(res.reply));
 };
+
