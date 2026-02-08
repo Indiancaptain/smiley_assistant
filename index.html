@@ -3,28 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <title>Smiley AI – Control Center</title>
-
-  <!-- IMPORTANT: relative paths for GitHub -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1 class="title">Smiley UI Loaded 🚀</h1>
+<h1 class="title">Smiley AI Loaded 🚀</h1>
 
 <div class="app">
 
   <!-- LEFT -->
   <div class="panel left">
     <h4>Visual Input</h4>
-
     <div class="camera-box">
       <video id="camera" autoplay muted playsinline></video>
       <button id="camBtn">📷 Camera</button>
     </div>
-
-    <h4>Sensitivity</h4>
-    <input type="range" min="0" max="100" value="35">
 
     <h4>History</h4>
     <div class="card history">
@@ -37,7 +31,7 @@
   <!-- CENTER -->
   <div class="panel center">
     <div id="mood" class="mood">😐</div>
-    <canvas id="orbCanvas"></canvas>
+    <canvas id="orbCanvas" width="300" height="300"></canvas>
 
     <div class="controls">
       <button id="start">▶ Start</button>
