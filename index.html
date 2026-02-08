@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smiley AI – Control Center</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<h1 style="color:white; text-align:center;">
+  Smiley UI Loaded 🚀
+</h1>
+
+<div class="app">
+
+  <!-- LEFT PANEL -->
+  <div class="panel left">
+    <h4>Visual Input</h4>
+
+    <div class="camera-box">
+      <video id="camera" autoplay muted playsinline></video>
+      <button id="camBtn">📷 Camera</button>
+    </div>
+
+    <h4>Sensitivity</h4>
+    <input type="range" min="0" max="100" value="35">
+
+    <h4>History</h4>
+    <div class="card history">
+      <div>Hey Smiley</div>
+      <div>Open Chrome</div>
+      <div>Send WhatsApp</div>
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="panel center">
+
+    <!-- 🌈 MOOD INDICATOR (JARVIS STYLE) -->
+    <div id="mood" class="mood">😐</div>
+
+    <canvas id="orbCanvas"></canvas>
+
+    <div class="controls">
+      <button id="start">▶ Start</button>
+      <button id="stop" class="hidden">⏹ Stop</button>
+      <button id="mute">🔇 Mute</button>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="panel right">
+    <h4>Transcript</h4>
+    <div id="chat" class="card chat"></div>
+  </div>
+
+</div>
+
+<!-- JS -->
+<script src="/script.js"></script>
+</body>
+</html>
