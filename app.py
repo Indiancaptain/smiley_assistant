@@ -13,13 +13,8 @@ def home():
 def command():
     data = request.json
     text = data.get("text", "")
-
     reply, mood = smiley.handle_command(text)
-
-    return jsonify({
-        "reply": reply,
-        "mood": mood
-    })
+    return jsonify({"reply": reply, "mood": mood})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
